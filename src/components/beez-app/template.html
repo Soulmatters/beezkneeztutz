@@ -1,0 +1,26 @@
+
+<app-location route="{{route}}"></app-location>
+<app-route 
+  route="{{route}}" 
+  pattern="/:page" 
+  data="{{routeData}}" 
+  tail="{{tail}}">
+</app-route>
+<app-route 
+route="{{route}}" 
+pattern="/:year/:month/:day/:slug" 
+data="{{blogData}}">
+</app-route>
+<iron-selector selected="[[page]]" class="menu" attr-for-selected="nume">
+    <a href="/" nume="home">Acasă</a>
+    <a href="/tutz" nume="tutz">Tutz</a>
+  </iron-selector>
+
+<iron-pages selected="{{page}}"  id="pages"
+attr-for-selected="name" 
+selected-attribute="visible" 
+role="main">
+<beez-home  class="page" name="home"></beez-home>
+<beez-tutz  class="page" name="tutz"></beez-tutz>
+
+</iron-pages>

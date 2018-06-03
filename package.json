@@ -1,0 +1,44 @@
+{
+  "name": "beezkneeztutz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "flat": true,
+  "scripts": {
+    "start": "http-server dist",
+    "build": "npm run clean:dist && node blog.js && webpack && npm run copystatic:dist",
+    "dev": "webpack-dev-server --hot --inline",
+    "copystatic": "cp -R node_modules/@webcomponents/webcomponentsjs/*.js src/vendor && cp -R node_modules/@webcomponents/webcomponentsjs/bundles/*.js src/vendor/bundles",
+    "copystatic:dist": "cp -R src/vendor dist/vendor && cp src/index.html dist ",
+    "clean:dist": "rm -rf dist",
+    "postinstall": "npm run copystatic"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@polymer/app-route": "^3.0.0-pre.19",
+    "@polymer/iron-image": "^3.0.0-pre.19",
+    "@polymer/iron-pages": "^3.0.0-pre.19",
+    "@polymer/iron-selector": "^3.0.0-pre.19",
+    "@polymer/polymer": "^3.0.2",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "css-loader": "0.28.11",
+    "html-loader": "^0.5.5",
+    "prismic-dom": "^2.1.0",
+    "prismic-javascript": "^1.5.0-beta.3",
+    "stylus": "0.54.5",
+    "stylus-loader": "3.0.2",
+    "to-string-loader": "1.1.5",
+    "webpack": "3.5.5",
+    "webpack-dev-server": "2.7.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}

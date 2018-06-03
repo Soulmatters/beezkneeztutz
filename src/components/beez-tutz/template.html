@@ -1,0 +1,12 @@
+<h1>tutz</h1>
+
+
+<template is="dom-repeat" items="{{tutz}}">
+    <div class="card">
+    <h3>[[item.data.title.0.text]]</h3>
+    
+    <iron-image src="[[item.data.image.card.url]]" fade placeholder="[[item.data.image.placeholder.url]]" preload sizing="cover"></iron-image>
+    
+        <p>[[item.data.body.0.text]]</p>
+    </div>
+</template>
